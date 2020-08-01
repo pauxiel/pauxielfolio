@@ -1,0 +1,286 @@
+html {
+    background-color: #5fa5bb;
+    color: #fff;
+    font-size: 16px;
+    min-height: 100vh;
+    min-width: 300px;
+    line-height: 1.5;
+    background-image: linear-gradient(to bottom right, #180cac, #d054e4 );
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.wallpaper {
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/hero-small.jpg);
+    opacity: 0.2;
+
+    animation-name: zoomOut;
+    animation-timing-function: ease-out;
+
+}
+
+.content {
+    display:flex;
+    position: relative;
+    min-height: 100vh;
+}
+
+.side {
+    max-height:20rem;
+    max-width:20rem;
+}
+
+@media screen and (max-width: 799px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 3rem;
+      }
+
+      .side {
+          margin-bottom: 3rem;
+          width: 100%;
+      }
+
+
+
+
+}
+
+
+
+@media screen and (min-width:800px) {
+    .content {
+        align-items:center;
+        justify-content: space-around;
+        justify-content: space-evenly;
+        padding: 4rem;
+
+    }
+
+    .side {
+        order: 2;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-left: 4rem;
+        height: 20rem;
+        width: 20rem;
+    }
+
+    .about {
+        flex-grow: 1;
+        flex-shrink:1;
+    }
+}
+
+
+.picture-shadow,
+.picture-image {
+    display:block;
+    height: 100%;
+    left:0;
+    width: 100%;
+    animation-duration: 750ms;
+    animation-timing-function: cubic-bezier(0, 0.5, 0.25, 1.25);
+
+}
+
+
+.picture-image {
+    border-radius: 300650px;
+    animation-name: picImage;
+    animation-delay: 500ms;
+}
+
+.name {
+    font-size:  2.25rem;
+    line-height: 1.125;
+    margin-bottom: 0.5rem;
+    animation-name: slideDown;
+    animation-delay: 100ms;
+}
+
+
+.job,
+.button {
+    font-family : "Montserrat" "Quicksand", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.job {
+    color:  #ffe479;
+    font-size: 0.75rem;
+    animation-name: slideUp;
+    animation-delay: 200ms;
+
+}
+
+.hr {
+    width: 4rem;
+    height: 1px;
+    content: "";
+    background-color: #ff470f;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    border: none;
+    transform-origin: center left;
+    animation-name: fillUp;
+    animation-delay: 300ms;
+
+}
+
+
+.description {
+    font-size: 1.5rem;
+    animation-name: slideUp;
+    animation-delay: 400ms;
+}
+
+.contact {
+    display: inline-block;
+    margin-top: 1.5rem;
+    vertical-align: top;
+}
+
+button,
+.social a {
+transform-origin: center;
+transition-duration: 100ms;
+}
+
+
+.button {
+    background-color: #fff;
+    border-radius: 290486px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    color: #9013fe;
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1;
+    padding: 1.25em 2em;
+    text-shadow: none;
+    transition-property: box-shadow, transform;
+    vertical-align: top;
+    white-space: nowrap;
+    will-change: box-shadow, transform;     
+}
+
+
+.social {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.social li {
+    height: 2rem;
+    margin-right: 0.5rem;
+    text-align: center;
+    width: 2rem;
+
+    /* margin-bottom: 1.5rem; */
+
+}
+
+.social a {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    height: 2rem;
+    justify-content: center;
+    width: 2rem;
+    opacity: 0.5;
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
+
+    animation-duration: 500ms;
+    animation-name: slideUp;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+    
+    /* opacity: 0.5; */
+}
+
+.button:hover {
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+    transform: scale(1.02) translateY(-4px);
+
+}
+
+.social a:hover {
+    opacity: 1;
+    transform: scale(1.25);
+    }
+
+    .social a:active {
+        opacity: 1;
+        transform: scale(1.1);
+        }
+
+
+        /* box-dhadow transgo */
+
+
+.wallpaper,
+.picture-shadow,
+.picture-image,
+.name,
+.job,
+.hr,
+.description,
+.contact,
+.social li {
+animation-duration: 1s;
+animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+animation-fill-mode: both;
+}
+
+
+.contact {
+    animation-name: bounceIn;
+    animation-delay: 600ms;
+}
+
+.picture-shadow {
+    animation-name: picShadow;
+    animation-delay: 500ms;
+}
+
+
+.social li:nth-child(1) {
+    animation-delay: 800ms;
+}
+
+.social li:nth-child(2) {
+    animation-delay: 900ms;
+}
+
+ .social li:nth-child(3) {
+    animation-delay: 1s;
+}
+ .social li:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+ .social li:nth-child(5) {
+    animation-delay: 1.2s;
+}
